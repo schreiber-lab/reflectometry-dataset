@@ -1,0 +1,8 @@
+#tested with python 3.9
+numpy
+notebook
+plotly
+silx
+black
+#refl1d
+tqdm
