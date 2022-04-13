@@ -1,0 +1,9 @@
+#tested with python 3.9
+numpy
+notebook
+plotly
+silx
+black
+refl1d       #to be installed with pip ... not on conda
+tqdm
+pandas
