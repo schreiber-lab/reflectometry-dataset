@@ -15,6 +15,52 @@ def prepare_figure(dataset, q_fit, label_prefix="film thickness"):
 
     # prepare data
     x, data, labels = get_data(dataset)
+
+    if data.ndim == 1:  # deal with datasets of a single curve
+
+        # hack to reshape data to look like 2d
+        for k, v in dataset["fit"].items():
+            if type(v) == np.ndarray:
+                dataset["fit"][k] = v.reshape(
+                    1,
+                )
+
+        fits = calc_reflectivity(*prep_model(q_fit, dataset))
+
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(
+                visible=True,
+                line=dict(width=2),
+                marker={"color": "#00CED1", "size": 10},
+                mode="markers",
+                name="exp.",
+                x=x.astype(float),
+                y=data.astype(float),
+            )
+        )
+        fig.add_trace(
+            go.Scatter(
+                visible=True,
+                line=dict(width=2),
+                marker={"color": "#00EE00", "size": 10},
+                mode="lines",
+                name="fit",
+                x=q_fit.astype(float),
+                y=fits[0].astype(float),
+            )
+        )
+        fig.update_yaxes(
+            title_text="X-ray reflectivity",
+            type="log",
+            range=[np.floor(np.log10(np.min(data))), 0.5],
+        )
+        fig.update_xaxes(title_text="momentum transfer q [1/Ang]")
+
+        fig.update_layout(title_text=label_prefix + f": {labels:.2f} Ang.")
+
+        return fig
+
     fits = calc_reflectivity(*prep_model(q_fit, dataset))
 
     # Create figure
@@ -47,7 +93,7 @@ def prepare_figure(dataset, q_fit, label_prefix="film thickness"):
     fig.update_yaxes(
         title_text="X-ray reflectivity",
         type="log",
-        range=[np.floor(np.log10(np.min(data))), 0],
+        range=[np.floor(np.log10(np.min(data))), 0.5],
     )
     fig.update_xaxes(title_text="momentum transfer q [1/Ang]")
 
@@ -72,6 +118,7 @@ def prepare_figure(dataset, q_fit, label_prefix="film thickness"):
 
     sliders = [dict(active=0, steps=steps)]
 
+    fig.update_layout(title_text=label_prefix + f"( {len(data)} curves )")
     fig.update_layout(sliders=sliders)
 
     return fig
