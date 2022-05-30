@@ -6,6 +6,7 @@ dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=1_gnu
   - alsa-lib=1.2.3=h516909a_0
+  - appdirs=1.4.4=pyh9f0ad1d_0
   - argon2-cffi=21.3.0=pyhd8ed1ab_0
   - argon2-cffi-bindings=21.2.0=py39hb9d737c_2
   - asttokens=2.0.5=pyhd8ed1ab_0
@@ -18,15 +19,18 @@ dependencies:
   - bleach=5.0.0=pyhd8ed1ab_0
   - brotli=1.0.9=h166bdaf_7
   - brotli-bin=1.0.9=h166bdaf_7
+  - brotlipy=0.7.0=py39hb9d737c_1004
+  - bumps=0.9.0=pyhd8ed1ab_0
   - bzip2=1.0.8=h7f98852_4
   - c-ares=1.18.1=h7f98852_0
-  - ca-certificates=2021.10.8=ha878542_0
+  - ca-certificates=2022.5.18.1=ha878542_0
   - cached-property=1.5.2=hd8ed1ab_1
   - cached_property=1.5.2=pyha770c72_1
-  - certifi=2021.10.8=py39hf3d152e_2
+  - certifi=2022.5.18.1=py39hf3d152e_0
   - cffi=1.15.0=py39h4bc2ebd_0
   - click=8.1.2=py39hf3d152e_0
   - colorama=0.4.4=pyh9f0ad1d_0
+  - cryptography=36.0.2=py39hd97740a_1
   - cycler=0.11.0=pyhd8ed1ab_0
   - dataclasses=0.8=pyhc8e2a94_3
   - dbus=1.13.6=h5008d03_3
@@ -49,6 +53,7 @@ dependencies:
   - h5py=3.6.0=nompi_py39h7e08c79_100
   - hdf5=1.12.1=nompi_h2386368_104
   - icu=68.2=h9c3ff4c_0
+  - idna=3.3=pyhd8ed1ab_0
   - importlib-metadata=4.11.3=py39hf3d152e_1
   - importlib_resources=5.6.0=pyhd8ed1ab_1
   - ipykernel=6.13.0=py39hef51801_0
@@ -108,6 +113,7 @@ dependencies:
   - libxml2=2.9.10=h72842e0_4
   - libxslt=1.1.33=h15afd5d_2
   - libzlib=1.2.11=h166bdaf_1014
+  - llvmlite=0.38.1=py39h7d9a04d_0
   - lxml=4.8.0=py39hb9d737c_3
   - lz4-c=1.9.3=h9c3ff4c_1
   - mako=1.2.0=pyhd8ed1ab_1
@@ -130,8 +136,9 @@ dependencies:
   - notebook=6.4.10=pyha770c72_0
   - nspr=4.32=h9c3ff4c_1
   - nss=3.77=h2350873_0
+  - numba=0.55.1=py39h66db6d7_1
   - openjpeg=2.4.0=hb52868f_1
-  - openssl=1.1.1n=h166bdaf_0
+  - openssl=1.1.1o=h166bdaf_0
   - packaging=21.3=pyhd8ed1ab_0
   - pandas=1.4.2=py39h1832856_1
   - pandoc=2.18=ha770c72_0
@@ -153,13 +160,16 @@ dependencies:
   - pure_eval=0.2.2=pyhd8ed1ab_0
   - pycparser=2.21=pyhd8ed1ab_0
   - pygments=2.11.2=pyhd8ed1ab_0
+  - pyopenssl=22.0.0=pyhd8ed1ab_0
   - pyparsing=3.0.8=pyhd8ed1ab_0
+  - pyppeteer=1.0.2=pyhd8ed1ab_0
   - pyqt=5.12.3=py39hf3d152e_8
   - pyqt-impl=5.12.3=py39hde8b62d_8
   - pyqt5-sip=4.19.18=py39he80948d_8
   - pyqtchart=5.12=py39h0fcd23e_8
   - pyqtwebengine=5.12.1=py39h0fcd23e_8
   - pyrsistent=0.18.1=py39hb9d737c_1
+  - pysocks=1.7.1=py39hf3d152e_5
   - python=3.9.12=h9a8a25e_1_cpython
   - python-dateutil=2.8.2=pyhd8ed1ab_0
   - python-fastjsonschema=2.15.3=pyhd8ed1ab_0
@@ -192,8 +202,10 @@ dependencies:
   - typing_extensions=4.1.1=pyha770c72_0
   - tzdata=2022a=h191b570_0
   - unicodedata2=14.0.0=py39hb9d737c_1
+  - urllib3=1.26.9=pyhd8ed1ab_0
   - wcwidth=0.2.5=pyh9f0ad1d_2
   - webencodings=0.5.1=py_1
+  - websockets=10.3=py39hb9d737c_0
   - wheel=0.37.1=pyhd8ed1ab_0
   - xorg-libxau=1.0.9=h7f98852_0
   - xorg-libxdmcp=1.1.3=h7f98852_0
@@ -203,9 +215,14 @@ dependencies:
   - zlib=1.2.11=h166bdaf_1014
   - zstd=1.5.2=ha95c52a_0
   - pip:
-    - bumps==0.9.0
-    - llvmlite==0.38.0
-    - numba==0.55.1
+    - jupyter-contrib-core==0.3.3
+    - jupyter-contrib-nbextensions==0.5.1
+    - jupyter-highlight-selected-word==0.2.0
+    - jupyter-latex-envs==1.4.6
+    - jupyter-nbextensions-configurator==0.4.1
     - numpy==1.21.5
     - periodictable==1.6.0
+    - pyee==8.2.2
+    - pyyaml==6.0
     - refl1d==0.8.15
+
