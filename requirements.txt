@@ -4,6 +4,6 @@ notebook
 plotly
 silx
 black
-refl1d       #to be installed with pip ... not on conda
+refl1d
 tqdm
 pandas
